@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/spidey_dark_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="32dp">
+
+        <!-- Custom Spider Header Bar -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="1.5dp"
+            app:strokeColor="@color/spidey_gold"
+            app:cardBackgroundColor="@color/spidey_red"
+            android:layout_marginBottom="28dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <!-- Spider Logo -->
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_spider_mask"
+                    app:tint="@color/white"
+                    android:contentDescription="Spider Logo" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Spider-IoT"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🟢 En línea"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/spidey_gold" />
+
+                </LinearLayout>
+
+                <!-- Profile Action Button -->
+                <ImageButton
+                    android:id="@+id/btnProfileHeader"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_profile"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:tint="@color/white"
+                    android:contentDescription="Perfil de Usuario" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section Title: Widgets de Sensores -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Widgets de Sensores"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/spidey_gold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Sensor Widgets Grid - Fila 1 (Humedad y Temperatura en Cuadros) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="14dp">
+
+            <!-- Cuadro Widget 1: Humedad -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="@color/humidity_blue"
+                app:cardBackgroundColor="@color/humidity_bg"
+                android:layout_marginEnd="7dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_humidity"
+                        android:layout_marginBottom="8dp"
+                        android:contentDescription="Humedad" />
+
+                    <TextView
+                        android:id="@+id/tvHumedad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-- %"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/humidity_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Humedad"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Cuadro Widget 2: Temperatura -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="@color/temp_orange"
+                app:cardBackgroundColor="@color/temp_bg"
+                android:layout_marginStart="7dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_temperature"
+                        android:layout_marginBottom="8dp"
+                        android:contentDescription="Temperatura" />
+
+                    <TextView
+                        android:id="@+id/tvTemperatura"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-- °C"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/temp_orange" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Temperatura"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- Sensor Widgets Grid - Fila 2 (Luz en Cuadro) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="32dp">
+
+            <!-- Cuadro Widget 3: Luz -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="@color/light_yellow"
+                app:cardBackgroundColor="@color/light_bg"
+                android:layout_marginEnd="7dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_light"
+                        android:layout_marginBottom="8dp"
+                        android:contentDescription="Luz" />
+
+                    <TextView
+                        android:id="@+id/tvLuz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-- lx"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/light_yellow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Iluminación Luz"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Espacio vacío simétrico en la cuadrícula -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:layout_marginStart="7dp" />
+
+        </LinearLayout>
+
+        <!-- Section Title: Control del Motor / Actuador (Ubicado más abajo) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Control del Sistema"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/spidey_gold"
+            android:layout_marginBottom="14dp" />
+
+        <!-- Actuator Card: Motor / Bomba de Agua -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1.5dp"
+            app:strokeColor="@color/pump_green"
+            app:cardBackgroundColor="@color/pump_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/ic_pump"
+                    android:contentDescription="Bomba de agua" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Motor - Bomba de Agua"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_white" />
+
+                    <TextView
+                        android:id="@+id/tvEstadoBomba"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estado: Apagada ⚪"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_muted" />
+
+                </LinearLayout>
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switchBomba"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</ScrollView>
